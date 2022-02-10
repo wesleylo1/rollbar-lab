@@ -22,7 +22,6 @@ app.get(cors())
 app.use(express.static(path.join(__dirname, '../client/'))) // follow up with this
 
 app.get('/',(req,res) =>{
-    rollbar.log('accessed')
     res.sendFile(path.join(__dirname, '../client/index.html'))
     try {
         nonExistentFunction()
