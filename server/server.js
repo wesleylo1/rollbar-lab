@@ -26,6 +26,14 @@ app.get('/',(req,res) =>{
     res.sendFile(path.join(__dirname, '../client/index.html'))
 })
 
+app.get('/',(req,res) => {
+    try {
+        nonExistentFunction()
+    } catch (error) {
+        rollbar.log(error)
+    }
+})
+
 
 const port = process.env.PORT || SERVER_PORT
 
