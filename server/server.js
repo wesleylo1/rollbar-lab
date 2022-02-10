@@ -5,6 +5,8 @@ const cors = require('cors')
 
 const app = express()
 
+const path = require('path')
+
 
 app.get(express.json())
 app.get(cors())
